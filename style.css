@@ -1,0 +1,563 @@
+:root {
+  --white: #ffffff;
+  --negro: #292929;
+  --rojo: #ff4719;
+  --gris: #e9e9e9;
+  --gris2:#7c7c7c;
+
+  --size-large: clamp(34px, 4vw, 54px);
+  --size-medium: clamp(19px, 2vw, 24px);
+  --size-normal: clamp(18px, 2vw, 14px);
+
+  --size-pequeño:/*para excepciones/footer*/ clamp(15px, 1.5vw, 12px);
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+
+html, body {
+  margin: 0;
+  /*background: radial-gradient(ellipse, var(--amarillo) 5%, var(--white) 55%);*/
+  background: var(--white);
+  font-family: "Nunito Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100,
+    "YTLC" 500;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.main-header {
+  width: 100%;
+  background-color: var(--white);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 40px;
+}
+
+.page-wrap {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  width: 100%;
+  max-width: 1000px; /* límite razonable para no bardearla demasiado ancho con pantallas 4K */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 130px 0px;
+  padding-top: 40px;
+  padding-bottom: 0px;
+  gap: 100px;
+}
+
+.cardgasto {
+  width: 100%;
+  font-size: var(--size-normal);
+  color: var(--white);
+  line-height: 20px;
+  background: var(--rojo);
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.carddolor {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--size-medium);
+  color: var(--negro);
+  background: var(--white);
+  padding: 20px;
+  gap: 100px;
+  padding-left: 40px;
+  padding-right: 40px;
+  line-height: 35px;
+  text-align: left;
+}
+
+.lista1,
+.lista2,
+.lista3,
+.lista4 {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* distancia entre cada li */
+}
+
+
+.lista1 li,
+.lista2 li,
+.lista3 li,
+.lista4 li {
+  display: flex;
+  align-items: flex-start; /* 👈 alinea con la primera línea */
+  gap: 12px;               /* espacio entre ícono y texto */
+  position: relative;
+}
+
+.lista1 li::before,
+.lista2 li::before,
+.lista3 li::before,
+.lista4 li::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0; /* evita que se achique */
+  background-image: url("circulo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 6px; /* Ajuste fino para alinearlo PERFECTO */
+}
+
+.carddeseo {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--size-medium);
+  color: var(--negro);
+  background: var(--white);
+  padding: 20px;
+  gap: 100px;
+  padding-left: 40px;
+  padding-right: 40px;
+  line-height: 35px;
+  text-align: left;
+}
+
+.cardbeneficio {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--size-medium);
+  color: var(--negro);
+  background: var(--white);
+  padding: 20px;
+  gap: 100px;
+  padding-left: 40px;
+  padding-right: 40px;
+  line-height: 35px;
+  text-align: left;
+}
+
+.cardrevelacion {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--size-medium);
+  color: var(--negro);
+  background: var(--white);
+  padding: 20px;
+  gap: 100px;
+  padding-left: 40px;
+  padding-right: 40px;
+  line-height: 35px;
+  text-align: left;
+}
+
+h1 {
+  line-height: 50px;
+}
+
+.resaltado /*span*/{
+  color: var(--white);
+  background-color: var(--rojo);
+}
+
+.cardbio {
+  display: flex;
+  flex-direction: row;
+  font-size: var(--size-medium);
+  line-height: 35px;
+  color: var(--negro);
+  background: var(--white);
+  padding: 20px;
+  gap: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 20px;
+  border: 2px solid var(--gris);
+}
+
+
+.bio {
+  display: flex;
+  align-self: center;
+  text-align: left;
+}
+
+.cardagenda {
+  padding: 50px;
+  background: var(--gris);
+  border: none;
+  border-radius: 20px;
+}
+
+.titulo1{
+  color: var(--white);
+}
+
+.titulo2{
+  color: var(--negro);
+}
+
+.titulo3 {
+  color: var(--rojo);
+}
+
+.cta{
+  font-size: var(--size-normal);
+  background: var(--rojo);
+  color: var(--white);
+  padding: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.cta:hover {
+  background: var(--negro);
+  color: var(--white);
+}
+
+.carddudas {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--size-medium);
+  color: var(--negro);
+  background: var(--white);
+  padding: 20px;
+  gap: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  line-height: 35px;
+  text-align: left;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--gris);
+}
+
+.faq-question-btn {
+  width: 100%;
+  background: var(--gris);
+  color: var(--negro);
+  font-family: "Nunito sans" , sans-serif;
+  font-size: var(--size-medium);
+  padding: 15px 20px;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.faq-question-btn.active {
+  background: var(--gris); /*color cuando esta abierto*/
+  color: var(--rojo);
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.faq-question-btn.active .arrow {
+  transform: rotate(180deg);
+}
+
+/*Panel oculto*/
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  background: var(--white);
+  transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+.faq-answer.open {
+  padding: 20px;
+}
+
+.yo {
+  max-width: 200px;
+  border-radius: 100px;
+  position: relative;
+  z-index: 1;
+}
+
+a {
+  color: inherit;        /* usa el color del texto del lugar donde esté */
+  text-decoration: none; /* sin subrayado */
+}
+
+
+.footer{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  max-height: 300px;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  background: var(--negro);
+  color: var(--white);
+
+  width: 100vw;        /* ancho total del viewport */
+  position: relative;
+  margin-left: -50vw;  /* romper el padding del contenedor */
+  margin-right: -50vw;
+}
+
+
+/*-----------------LEGALES--------------*/
+
+.cardpolitica {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--size-medium);
+  color: var(--negro);
+  background: var(--white);
+  padding: 20px;
+  gap: 100px;
+  padding-left: 40px;
+  padding-right: 40px;
+  line-height: 35px;
+  text-align: left;
+}
+
+/*----------------- MI AGENDA--------------*/
+
+.aclaracion-agenda, .titulo-agenda {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--size-normal);
+  color: var(--negro);
+  background: var(--white);
+  padding: 20px;
+  text-align: center;
+}
+
+
+
+
+
+/* ============================================
+   RESPONSIVE GLOBAL — MÓVILES + TABLETS
+   ============================================ */
+
+/* ============================================
+      1) Ajustes generales de espaciado
+   ============================================ */
+
+@media (max-width: 900px) {
+  .main {
+    padding-left: 20px;
+    padding-right: 20px;
+    gap: 70px;
+  }
+
+  .carddolor,
+  .carddeseo,
+  .cardbeneficio,
+  .cardrevelacion,
+  .carddudas,
+  .cardbio,
+  .cardpolitica {
+    padding-left: 25px;
+    padding-right: 25px;
+    gap: 40px;
+    line-height: 32px;
+  }
+
+  /* footer no pegado a bordes */
+  .footer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+
+/* ============================================
+      2) Ajustes TIPOGRÁFICOS
+   ============================================ */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: clamp(28px, 6vw, 40px);
+    line-height: 40px;
+  }
+
+  .carddolor,
+  .carddeseo,
+  .cardbeneficio,
+  .cardrevelacion,
+  .carddudas,
+  .cardpolitica {
+    font-size: clamp(17px, 4vw, 19px);
+  }
+
+  .cta {
+    font-size: clamp(16px, 4vw, 18px);
+    padding: 12px 18px;
+  }
+}
+
+
+/* ============================================
+      3) ICONOS DE LAS LISTAS
+      — Evita que cambien de tamaño bruscamente
+   ============================================ */
+
+@media (max-width: 768px) {
+  .lista1 li::before,
+  .lista2 li::before,
+  .lista3 li::before,
+  .lista4 li::before {
+    width: 18px;
+    height: 18px;
+    margin-top: 4px;
+  }
+
+  .lista1 li,
+  .lista2 li,
+  .lista3 li,
+  .lista4 li {
+    gap: 10px;
+  }
+}
+
+
+/* ============================================
+      4) CARD BIO — FOTO ARRIBA EN MÓVILES
+   ============================================ */
+
+@media (max-width: 768px) {
+  .cardbio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 25px;
+  }
+
+  .yo {
+    order: -1;         /* foto primero */
+    max-width: 180px;
+  }
+
+  .bio {
+    text-align: center;
+    align-self: center;
+  }
+}
+
+
+/* ============================================
+      5) FAQ Responsive
+   ============================================ */
+
+@media (max-width: 768px) {
+  .faq-question-btn {
+    font-size: clamp(18px, 4vw, 20px);
+    padding: 14px 16px;
+  }
+
+  .faq-answer {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .arrow {
+    width: 20px !important;
+  }
+}
+
+
+/* ============================================
+      6) Agenda — iframe fluido y centrado
+   ============================================ */
+
+@media (max-width: 768px) {
+  iframe {
+    width: 100% !important;
+    height: 420px !important;
+  }
+
+  .titulo-agenda,
+  .aclaracion-agenda {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+
+/* ============================================
+      7) Tamaños mínimos para evitar “botones enanos”
+   ============================================ */
+
+.cta {
+  min-width: 140px;
+  min-height: 45px;
+}
+
+
+/* ============================================
+      8) Evitar texto pegado a bordes en toda la web
+   ============================================ */
+
+body, .page-wrap {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@media (max-width: 480px) {
+  .main {
+    padding-left: 15px;
+    padding-right: 15px;
+    gap: 60px;
+  }
+
+  .carddolor,
+  .carddeseo,
+  .cardbeneficio,
+  .cardrevelacion,
+  .carddudas,
+  .cardbio,
+  .cardpolitica {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+
+
+
+

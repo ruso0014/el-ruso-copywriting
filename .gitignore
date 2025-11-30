@@ -1,0 +1,19 @@
+# Archivos temporales
+*.log
+*.tmp
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Editor (VS Code)
+.vscode/
+
+# Archivos personales
+*.docx
+*.psd
+*.ai
+
+# Carpetas de pruebas
+/node_modules/
+dist/
